@@ -12,14 +12,12 @@ that extract features from text and images inpendently and  train in it a diffus
 
 
 Dataset: new_multimodal
-**files should be run in the respective order.
 
-text_revised file trains on textual data in the given 6 classes and evaluate the loss and accuracy on validation set.
+Text_revised file trains on text data in the given 6 classes and evaluate the loss and accuracy on validation set.
 
 Image mode file trains inception module CNN model  on the image data and evaluate loss and accurarcy.
 
-ff model concatenate the the layer before softmax of both image and text model and then train it on 4 layer CNN using multi input(text,image) keras functional api.
+Feature Fusion model concatenate the the layer before softmax of both image and text model and then train it on 4 layer CNN using multi input(text,image) keras functional api.
+Descion Fusion model adds six-dimensional softmax outputs of image and text model and then apply softmax to predict maximum decision output , where the decision is based on the class corresponding to the index with the maximum value.
 
-df model adds six-dimensional softmax outputs of image and text model and then apply softmax to predict maximum decision output , where the decision is based on the class corresponding to the index with the maximum value.
 
-NOTE:image model and text revised must be run before running df model.
